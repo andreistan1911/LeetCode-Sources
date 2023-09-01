@@ -3,8 +3,22 @@
 
 using namespace std;
 
+class Solution {
+public:
+    vector<int> countBits(int n) {
+        vector<int> ans(n + 1);
+
+        ans[0] = 0;
+
+        for (int i = 0; i <= n; i++)
+            ans[i] = ans[i >> 1] + (i & 1);
+
+        return ans;
+    }
+};
+
 void printAnswer(vector<int> v)
-{
+{   
     for (int i = 0; i < v.size(); i++)
         printf("%d ", v[i]);
     printf("\n");
@@ -12,25 +26,9 @@ void printAnswer(vector<int> v)
 
 int main()
 {
-    int n = 5;
-    vector<int> ans;
+    int n = 10;
+    Solution s;
 
-    for (int i = 0; i <= n; i++)
-    {
-        int nrOnes = 0;
-
-        for (int j = 1; j <= i; j <<= 1)
-        {
-            if (i & j)
-            {
-                nrOnes++;        
-            }
-        }
-
-        ans.push_back(nrOnes);
-    }
-
-    printAnswer(ans);
-
+    printAnswer(s.countBits(n));
     return 0;
 }
