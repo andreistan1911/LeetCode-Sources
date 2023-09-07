@@ -11,7 +11,7 @@ public:
     }
 
     void printAnswer(bool answer) {
-        cout << answer << '\n';
+        cout << (answer ? "true" : "false") << '\n';
     }
 
     void printAnswer(string answer) {
