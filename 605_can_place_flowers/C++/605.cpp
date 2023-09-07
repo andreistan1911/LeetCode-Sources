@@ -28,7 +28,7 @@ public:
 class Solution {
 public:
     bool canPlaceFlowers(vector<int>& flowerbed, int n) {
-         if (n == 0)
+        if (n == 0)
             return true;
 
         if (flowerbed.size() == 1) {
