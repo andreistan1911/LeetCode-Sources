@@ -35,7 +35,7 @@ class Solution {
     }
 }
 
-class Printer {
+class P605 {
     public static void main(String args[]) {
         int[] flowerbed = {1, 0, 0, 0, 1};
         int n = 2;
