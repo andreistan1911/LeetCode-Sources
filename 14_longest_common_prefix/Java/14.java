@@ -1,32 +1,31 @@
 class Solution {
+    /**
+     * Finds the longest common prefix among all the strings in the input array.
+     *
+     * @param strs The array of strings to find the longest common prefix from.
+     * @return The longest common prefix among all the strings.
+     */
     public String longestCommonPrefix(String[] strs) {
-        String answer = "";
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+
         String firstWord = strs[0];
-        boolean stop = false;
-        int i = 0;
+        StringBuilder answer = new StringBuilder();
 
-        do
-        {
-            char current;
-            
-            if (i < firstWord.length())
-                current = firstWord.charAt(i);            
-            else
-                break;
+        for (int i = 0; i < firstWord.length(); i++) {
+            char currentChar = firstWord.charAt(i);
 
-            for (String word : strs)
-                if (i == word.length() || word.charAt(i) != current) {
-                    stop = true;
-                    break;
+            for (int j = 1; j < strs.length; j++) {
+                if (i >= strs[j].length() || strs[j].charAt(i) != currentChar) {
+                    return answer.toString();
                 }
+            }
 
-            ++i;
+            answer.append(currentChar);
+        }
 
-            if (!stop)
-                answer += current;
-        } while (!stop);
-
-        return answer;
+        return answer.toString();
     }
 }
 
