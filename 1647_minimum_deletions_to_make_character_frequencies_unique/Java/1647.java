@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     /**
-     * Calculates the minimum number of deletions required to make all characters in the given string `s` unique.
+     * Calculates the minimum number of deletions required to make all characters frequencies in the given string `s` unique.
      *
      * @param s The input string
      * @return The minimum number of deletions required
