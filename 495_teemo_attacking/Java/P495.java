@@ -8,7 +8,7 @@ class Solution {
         for (int i = 0; i < timeSeries.length; ++i) {
             poisonedDuration += duration;
 
-            if (time != 0 && timeSeries[i] - time < duration) {
+            if (i != 0 && timeSeries[i] - time < duration) {
                 poisonedDuration -= duration - (timeSeries[i] - time);
             }
 
@@ -21,7 +21,7 @@ class Solution {
 
 class P495 {
     public static void main(String args[]) {
-        int[] timeSeries = {0,3,6,9};
+        int[] timeSeries = {0, 3, 6, 9};
         int duration = 5;
 
         Solution solution = new Solution();
