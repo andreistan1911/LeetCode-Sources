@@ -22,7 +22,7 @@ class Solution {
 class P495 {
     public static void main(String args[]) {
         int[] timeSeries = {0,3,6,9};
-        int duration = 4;
+        int duration = 5;
 
         Solution solution = new Solution();
 
